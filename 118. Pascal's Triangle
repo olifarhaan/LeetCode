@@ -1,0 +1,16 @@
+class Solution {
+    public List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> list= new ArrayList<>();
+        
+        for(int row=1; row<=numRows; row++){
+            List<Integer> innerList= new ArrayList<>();
+            int element=1;
+            for(int col=1; col<=row; col++){
+                innerList.add(element);
+                element = element * (row-col)/col;
+            }
+            list.add(innerList);
+        }
+        return list;
+    }
+}
